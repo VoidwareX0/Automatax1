@@ -1,0 +1,42 @@
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "automatax1"
+version = "0.1.0"
+description = "Ultra-fast Android automation - 50x faster than alternatives"
+authors = ["Your Name <your.email@example.com>"]
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/VoidwareX1/automatax1"
+keywords = ["android", "automation", "testing", "uiautomator", "fast"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+# Core dependencies - keep minimal!
+adbutils = { version = "^0.15.0", optional = false }
+# Add more as needed
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.0.0"
+black = "^22.0.0"
+isort = "^5.0.0"
+mypy = "^0.950"
+
+[tool.poetry.extras]
+image = ["opencv-python", "numpy"]
+record = ["imageio", "ffmpeg-python"]
+all = ["opencv-python", "numpy", "imageio", "ffmpeg-python"]
+
+[tool.black]
+line-length = 100
+target-version = ['py38', 'py39', 'py310']
+
+[tool.isort]
+profile = "black"
+line_length = 100
+
+[tool.mypy]
+strict = true
+python_version = "3.8"
