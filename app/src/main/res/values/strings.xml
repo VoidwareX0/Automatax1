@@ -1,5 +1,0 @@
-<!-- Path: automatax1/app/src/main/res/values/strings.xml -->
-<resources>
-    <string name="app_name">automatax1</string>
-    <string name="accessibility_service_description">automatax1 uses accessibility to automate your device. This allows it to read screen content, click buttons, and type text for your automation scripts.</string>
-</resources>
