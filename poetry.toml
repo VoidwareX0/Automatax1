@@ -1,0 +1,6 @@
+[virtualenvs]
+in-project = true
+create = true
+
+[repositories]
+pypi = { url = "https://pypi.org/simple/" }
