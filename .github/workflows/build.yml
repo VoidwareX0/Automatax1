@@ -38,12 +38,6 @@ jobs:
           zipStoreBase=GRADLE_USER_HOME
           zipStorePath=wrapper/dists
           EOF
-          # Generate the wrapper scripts
-          gradle wrapper
-          chmod +x gradlew
-
-      - name: Build Debug APK
-        run: ./gradlew assembleDebug
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
