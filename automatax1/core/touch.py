@@ -1,19 +1,28 @@
 """Touch and gesture simulation"""
-from .device import Device
 
 class Touch:
     """Handle touch interactions"""
     
-    def __init__(self, device: Device):
+    def __init__(self, device):
         self.device = device
     
-    def click(self, x: int, y: int) -> bool:
+    def click(self, x, y):
         """Click at coordinates"""
-        # To be implemented via socket
         print(f"Click at ({x}, {y})")
         return True
     
-    def swipe(self, x1: int, y1: int, x2: int, y2: int, duration: float = 0.2) -> bool:
+    def double_click(self, x, y):
+        """Double click at coordinates"""
+        self.click(x, y)
+        self.click(x, y)
+        return True
+    
+    def long_click(self, x, y, duration=0.5):
+        """Long press at coordinates"""
+        print(f"Long click at ({x}, {y}) for {duration}s")
+        return True
+    
+    def swipe(self, x1, y1, x2, y2, duration=0.2):
         """Swipe gesture"""
         print(f"Swipe from ({x1},{y1}) to ({x2},{y2})")
         return True
