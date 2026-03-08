@@ -21,9 +21,24 @@ jobs:
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
 
-      - name: Remove old gradlew if present and generate new wrapper
+      - name: Generate Gradle wrapper
         run: |
+          # Remove any existing wrapper files
           rm -f gradlew gradlew.bat
+          rm -rf gradle/wrapper
+          mkdir -p gradle/wrapper
+          # Download the Gradle wrapper jar
+          curl -L -o gradle/wrapper/gradle-wrapper.jar \
+            https://github.com/gradle/gradle/raw/master/gradle/wrapper/gradle-wrapper.jar
+          # Create properties file
+          cat > gradle/wrapper/gradle-wrapper.properties << EOF
+          distributionBase=GRADLE_USER_HOME
+          distributionPath=wrapper/dists
+          distributionUrl=https\://services.gradle.org/distributions/gradle-8.4-bin.zip
+          zipStoreBase=GRADLE_USER_HOME
+          zipStorePath=wrapper/dists
+          EOF
+          # Generate the wrapper scripts
           gradle wrapper
           chmod +x gradlew
 
