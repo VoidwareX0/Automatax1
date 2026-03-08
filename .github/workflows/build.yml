@@ -1,4 +1,5 @@
-# Path: automatax1/.github/workflows/build.yml
+
+# Path: .github/workflows/build.yml
 name: Build automatax1 APK
 
 on:
@@ -22,8 +23,12 @@ jobs:
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
 
-      - name: Make gradlew executable
-        run: chmod +x gradlew
+      - name: Create gradle wrapper if missing
+        run: |
+          if [ ! -f gradlew ]; then
+            gradle wrapper
+          fi
+          chmod +x gradlew
 
       - name: Build Debug APK
         run: ./gradlew assembleDebug
