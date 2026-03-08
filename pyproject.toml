@@ -6,10 +6,10 @@ build-backend = "poetry.core.masonry.api"
 name = "automatax1"
 version = "0.1.0"
 description = "Ultra-fast Android automation - 50x faster than alternatives"
-authors = ["Your Name <your.email@example.com>"]
+authors = ["Act <voidwarexxxemali.com>"]
 license = "MIT"
 readme = "README.md"
-repository = "https://github.com/VoidwareX1/automatax1"
+repository = "https://github.com/VoidwareX0/automatax1"
 keywords = ["android", "automation", "testing", "uiautomator", "fast"]
 
 [tool.poetry.dependencies]
