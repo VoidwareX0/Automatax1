@@ -1,19 +1,17 @@
-"""Touch and gesture simulation"""
-from .device import Device
+"""Keyboard input simulation"""
 
-class Touch:
-    """Handle touch interactions"""
+class Keyboard:
+    """Handle text input"""
     
-    def __init__(self, device: Device):
+    def __init__(self, device):
         self.device = device
     
-    def click(self, x: int, y: int) -> bool:
-        """Click at coordinates"""
-        # To be implemented via socket
-        print(f"Click at ({x}, {y})")
+    def type(self, text):
+        """Type text instantly"""
+        print(f"Type: {text}")
         return True
     
-    def swipe(self, x1: int, y1: int, x2: int, y2: int, duration: float = 0.2) -> bool:
-        """Swipe gesture"""
-        print(f"Swipe from ({x1},{y1}) to ({x2},{y2})")
+    def press(self, key):
+        """Press special key (home, back, etc)"""
+        print(f"Press: {key}")
         return True
